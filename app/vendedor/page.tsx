@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ShoppingBag, Store as StoreIcon, UtensilsCrossed, Wallet, CircleAlert } from "lucide-react";
+import { ArrowRight, LogOut, ShoppingBag, Store as StoreIcon, UtensilsCrossed, Wallet, CircleAlert } from "lucide-react";
 import { TopBar } from "@/components/nav/TopBar";
 import { Badge } from "@/components/ui/Card";
 import { requireRole } from "@/lib/auth";
@@ -8,6 +8,22 @@ import { formatKz } from "@/lib/money";
 import { orderStatusLabel, orderStatusTone, formatDate } from "@/lib/locale";
 import { cn } from "@/lib/cn";
 import { toggleStoreOpen } from "@/actions/stores";
+import { logout } from "@/actions/auth";
+
+function SignOutButton() {
+  return (
+    <form action={logout}>
+      <button
+        type="submit"
+        aria-label="Terminar sessão"
+        className="flex h-10 items-center gap-1.5 rounded-full px-3 text-xs font-semibold text-text-muted hover:bg-white/5 hover:text-text"
+      >
+        <LogOut size={16} />
+        <span>Sair</span>
+      </button>
+    </form>
+  );
+}
 
 export const metadata = { title: "Painel do vendedor" };
 
@@ -20,7 +36,7 @@ export default async function VendedorHomePage() {
   if (!store) {
     return (
       <>
-        <TopBar title="Bem-vindo" />
+        <TopBar title="Bem-vindo" right={<SignOutButton />} />
         <div className="mx-auto max-w-md px-5 pt-6">
           <div className="rounded-card border border-border bg-surface p-6 text-center">
             <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent">
@@ -68,7 +84,7 @@ export default async function VendedorHomePage() {
 
   return (
     <>
-      <TopBar title="Painel" />
+      <TopBar title="Painel" right={<SignOutButton />} />
       <div className="mx-auto max-w-md px-5 pt-4">
         <div className="rounded-card border border-border bg-surface p-4">
           <div className="flex items-center justify-between">
