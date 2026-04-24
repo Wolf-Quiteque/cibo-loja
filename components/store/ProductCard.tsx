@@ -57,26 +57,26 @@ export function ProductCard({ product, storeId, storeName, storeSlug, deliveryFe
         {product.description && (
           <div className="line-clamp-2 text-xs text-text-muted">{product.description}</div>
         )}
-        <div className="mt-auto flex items-center justify-between pt-2">
-          <div className="font-semibold text-brand">{formatKz(product.price)}</div>
+        <div className="mt-auto flex flex-col gap-2 pt-2">
+          <div className="truncate text-lg font-bold text-brand">{formatKz(product.price)}</div>
           {qty > 0 ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between gap-2">
               <button
                 type="button"
                 onClick={dec}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-white"
                 aria-label="Remover"
               >
-                <Minus size={14} />
+                <Minus size={16} />
               </button>
-              <span className="min-w-4 text-center text-sm font-semibold">{qty}</span>
+              <span className="flex-1 text-center text-sm font-semibold">{qty}</span>
               <button
                 type="button"
                 onClick={inc}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-black"
                 aria-label="Adicionar"
               >
-                <Plus size={14} />
+                <Plus size={16} />
               </button>
             </div>
           ) : (
@@ -84,7 +84,7 @@ export function ProductCard({ product, storeId, storeName, storeSlug, deliveryFe
               type="button"
               onClick={add}
               disabled={!product.available}
-              className="flex h-9 items-center gap-1 rounded-full bg-brand px-3 text-xs font-bold text-black disabled:opacity-40"
+              className="flex h-9 w-full items-center justify-center gap-1 rounded-full bg-brand text-xs font-bold text-black disabled:opacity-40"
             >
               <Plus size={14} /> Adicionar
             </button>

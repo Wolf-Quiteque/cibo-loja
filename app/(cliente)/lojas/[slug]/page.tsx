@@ -39,19 +39,15 @@ export default async function LojaPage({ params }: PageProps) {
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent" />
         </div>
-        <div className="-mt-12 px-5">
-          <div className="flex items-end gap-3">
-            <div className="relative h-20 w-20 overflow-hidden rounded-2xl border border-border bg-surface-2">
-              {store.logoUrl && <Image src={store.logoUrl} alt="" fill sizes="80px" className="object-cover" />}
-            </div>
-            <div className="min-w-0 flex-1 pb-1">
-              <div className="flex items-center gap-2">
-                <h1 className="truncate text-xl font-bold">{store.name}</h1>
-                {store.isOpen ? <Badge tone="brand">Aberto</Badge> : <Badge tone="danger">Fechado</Badge>}
-              </div>
-              <p className="text-xs text-text-muted">{store.category}</p>
-            </div>
+        <div className="px-5">
+          <div className="relative -mt-12 h-20 w-20 overflow-hidden rounded-2xl border border-border bg-surface-2 shadow-xl">
+            {store.logoUrl && <Image src={store.logoUrl} alt="" fill sizes="80px" className="object-cover" />}
           </div>
+          <div className="mt-3 flex items-center gap-2">
+            <h1 className="min-w-0 flex-1 truncate text-2xl font-bold">{store.name}</h1>
+            {store.isOpen ? <Badge tone="brand">Aberto</Badge> : <Badge tone="danger">Fechado</Badge>}
+          </div>
+          <p className="mt-0.5 text-xs text-text-muted">{store.category}</p>
           {store.description && (
             <p className="mt-3 text-sm text-text-muted">{store.description}</p>
           )}

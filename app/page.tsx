@@ -45,7 +45,7 @@ export default async function HomePage() {
 
           <section className="relative z-10 px-5 pt-6">
             <h1 className="text-3xl font-black leading-tight tracking-tight">
-              Comida ao <span className="text-brand">seu alcance</span>.
+              Tudo ao <span className="text-brand">seu alcance</span>.
             </h1>
             <p className="mt-1 text-sm text-text-muted">
               Encomende nas melhores lojas perto de si. Pague na entrega ou por transferência.
