@@ -1,4 +1,4 @@
-const VERSION = "v1";
+const VERSION = "v2";
 const STATIC_CACHE = `static-${VERSION}`;
 const PAGE_CACHE = `pages-${VERSION}`;
 const IMAGE_CACHE = `images-${VERSION}`;
@@ -6,8 +6,8 @@ const IMAGE_CACHE = `images-${VERSION}`;
 const PRECACHE = [
   "/",
   "/offline",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
+  "/pwa_icons_logo/icon-192x192.png",
+  "/pwa_icons_logo/icon-512x512.png",
   "/manifest.webmanifest",
 ];
 
@@ -36,7 +36,7 @@ function isImage(url) {
 }
 
 function isStatic(url) {
-  return url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/icons/");
+  return url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/pwa_icons_logo/");
 }
 
 self.addEventListener("fetch", (event) => {

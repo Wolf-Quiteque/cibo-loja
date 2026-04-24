@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { X, Download, Share, PlusSquare, Check, Sparkles } from "lucide-react";
+import { X, Share, PlusSquare, Check, Sparkles } from "lucide-react";
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -86,8 +87,8 @@ export function InstallPrompt() {
       {showBanner && (
         <div className="fixed bottom-24 left-4 right-4 z-[60] mx-auto max-w-md rounded-2xl glass p-3 shadow-2xl animate-[fadeIn_.2s_ease-out]">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/15 text-brand">
-              <Download size={18} />
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl ring-1 ring-brand/25">
+              <Image src="/pwa_icons_logo/icon-96x96.png" alt="" fill sizes="40px" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold">Instalar Sequele Express</p>
