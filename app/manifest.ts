@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Sequele Expresse — comida ao seu alcance",
+    name: "Sequele Express — comida ao seu alcance",
     short_name: "Sequele",
     description:
       "Peça comida das melhores lojas de Angola. Pagamento na entrega ou por transferência.",

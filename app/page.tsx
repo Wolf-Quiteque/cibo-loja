@@ -21,7 +21,7 @@ export default async function HomePage() {
             <div>
               <div className="text-xs text-text-muted">Olá{session ? "," : ""}</div>
               <div className="text-lg font-bold">
-                {session ? session.name.split(" ")[0] : "Bem-vindo à Sequele Expresse"}
+                {session ? session.name.split(" ")[0] : "Bem-vindo à Sequele Express"}
               </div>
             </div>
             {session ? (

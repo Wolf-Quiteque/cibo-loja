@@ -5,11 +5,11 @@ import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 import { CartProvider } from "@/components/cart/cart-store";
 
 export const metadata: Metadata = {
-  title: { default: "Sequele Expresse — comida ao seu alcance", template: "%s · Sequele Expresse" },
+  title: { default: "Sequele Express — comida ao seu alcance", template: "%s · Sequele Express" },
   description:
     "Peça comida das melhores lojas de Angola. Pagamento na entrega ou por transferência — rápido, simples e seguro.",
-  applicationName: "Sequele Expresse",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Sequele Expresse" },
+  applicationName: "Sequele Express",
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Sequele Express" },
   formatDetection: { telephone: false },
   icons: {
     icon: "/icons/icon-192.png",
