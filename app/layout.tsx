@@ -5,11 +5,11 @@ import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 import { CartProvider } from "@/components/cart/cart-store";
 
 export const metadata: Metadata = {
-  title: { default: "Loja Cibo — comida ao seu alcance", template: "%s · Loja Cibo" },
+  title: { default: "Sequele Expresse — comida ao seu alcance", template: "%s · Sequele Expresse" },
   description:
     "Peça comida das melhores lojas de Angola. Pagamento na entrega ou por transferência — rápido, simples e seguro.",
-  applicationName: "Loja Cibo",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Loja Cibo" },
+  applicationName: "Sequele Expresse",
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Sequele Expresse" },
   formatDetection: { telephone: false },
   icons: {
     icon: "/icons/icon-192.png",

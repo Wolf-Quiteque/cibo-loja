@@ -51,7 +51,7 @@ export function InstallPrompt() {
           <Download size={18} />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold">Instalar Loja Cibo</p>
+          <p className="text-sm font-semibold">Instalar Sequele Expresse</p>
           <p className="text-xs text-text-muted">
             Acesso rápido no ecrã inicial, como uma app.
           </p>
