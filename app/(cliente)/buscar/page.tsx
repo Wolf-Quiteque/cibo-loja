@@ -14,7 +14,7 @@ export default async function BuscarPage({ searchParams }: Props) {
   const { q = "", c = "" } = await searchParams;
   const query = q.trim();
 
-  const storeFilter: Record<string, unknown> = {};
+  const storeFilter: Record<string, unknown> = { approved: true, suspended: { $ne: true } };
   if (c) storeFilter.category = c;
   if (query) {
     const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");

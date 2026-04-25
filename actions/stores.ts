@@ -99,6 +99,8 @@ export async function saveStore(
       isOpen: parsed.data.isOpen,
       logoUrl,
       bannerUrl,
+      approved: false,
+      suspended: false,
       createdAt: new Date(),
     });
   }

@@ -8,7 +8,12 @@ import { BottomNav } from "@/components/nav/BottomNav";
 export default async function HomePage() {
   const session = await getSession();
   const col = await storesCol();
-  const all = await col.find({}, { sort: { isOpen: -1, createdAt: -1 }, limit: 50 }).toArray();
+  const all = await col
+    .find(
+      { approved: true, suspended: { $ne: true } },
+      { sort: { isOpen: -1, createdAt: -1 }, limit: 50 },
+    )
+    .toArray();
 
   const categories = Array.from(new Set(all.map((s) => s.category).filter(Boolean)));
 

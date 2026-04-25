@@ -36,6 +36,7 @@ async function ensureIndexes(db: Db) {
     db.collection("users").createIndex({ phone: 1 }, { unique: true }),
     db.collection("stores").createIndex({ slug: 1 }, { unique: true }),
     db.collection("stores").createIndex({ vendorId: 1 }),
+    db.collection("stores").createIndex({ approved: 1, suspended: 1 }),
     db.collection("products").createIndex({ storeId: 1 }),
     db.collection("products").createIndex({ category: 1 }),
     db.collection("orders").createIndex({ clientId: 1, createdAt: -1 }),
@@ -88,6 +89,8 @@ export interface StoreDoc {
   address: string;
   isOpen: boolean;
   deliveryFee: number;
+  approved: boolean;
+  suspended: boolean;
   createdAt: Date;
 }
 

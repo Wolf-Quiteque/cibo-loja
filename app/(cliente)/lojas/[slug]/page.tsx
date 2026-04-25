@@ -16,6 +16,7 @@ export default async function LojaPage({ params }: PageProps) {
   const { slug } = await params;
   const store = await (await storesCol()).findOne({ slug });
   if (!store) notFound();
+  if (!store.approved || store.suspended) notFound();
 
   const items = await (await productsCol())
     .find({ storeId: store._id })

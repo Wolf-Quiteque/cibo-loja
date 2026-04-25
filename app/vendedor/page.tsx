@@ -86,6 +86,22 @@ export default async function VendedorHomePage() {
     <>
       <TopBar title="Painel" right={<SignOutButton />} />
       <div className="mx-auto max-w-md px-5 pt-4">
+        {!store.approved && !store.suspended && (
+          <div className="mb-3 rounded-card border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
+            <div className="font-semibold">Aguardando aprovação</div>
+            <div className="mt-0.5 text-xs">
+              A sua loja está em análise. Assim que for aprovada, ficará visível no Sequele Express e poderá receber pedidos.
+            </div>
+          </div>
+        )}
+        {store.suspended && (
+          <div className="mb-3 rounded-card border border-danger/30 bg-danger/10 p-3 text-sm text-danger">
+            <div className="font-semibold">Loja suspensa</div>
+            <div className="mt-0.5 text-xs">
+              A sua loja foi suspensa por um administrador e não está visível no Sequele Express. Contacte o suporte para mais informações.
+            </div>
+          </div>
+        )}
         <div className="rounded-card border border-border bg-surface p-4">
           <div className="flex items-center justify-between">
             <div className="min-w-0">
