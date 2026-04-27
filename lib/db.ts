@@ -10,7 +10,9 @@ declare global {
 
 function createClient(): Promise<MongoClient> {
   const client = new MongoClient(env.mongoUri(), {
-    maxPoolSize: 10,
+    maxPoolSize: 5,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
   });
   return client.connect();
 }
