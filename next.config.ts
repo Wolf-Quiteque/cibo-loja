@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
-function r2HostPatterns() {
-  const patterns: { protocol: "https"; hostname: string }[] = [];
+function imageHostPatterns() {
+  const patterns: { protocol: "https"; hostname: string }[] = [
+    { protocol: "https", hostname: "*.public.blob.vercel-storage.com" },
+  ];
+  // Keep existing images visible until `npm run migrate:r2-to-blob` has moved them.
   const publicBase = process.env.R2_PUBLIC_BASE_URL;
   if (publicBase) {
     try {
@@ -15,11 +18,11 @@ function r2HostPatterns() {
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: r2HostPatterns(),
+    remotePatterns: imageHostPatterns(),
   },
   experimental: {
     serverActions: {
-      bodySizeLimit: "12mb",
+      bodySizeLimit: "4mb",
     },
   },
   async headers() {

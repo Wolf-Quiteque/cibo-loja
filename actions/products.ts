@@ -6,7 +6,7 @@ import { requireRole } from "@/lib/auth";
 import { products, stores, ObjectId } from "@/lib/db";
 import { productSchema } from "@/lib/validation";
 import { uploadImage } from "./uploads";
-import { deleteObject, keyFromPublicUrl } from "@/lib/r2";
+import { deleteObject } from "@/lib/blob";
 
 export type ProductState = { error?: string } | null;
 
@@ -86,8 +86,7 @@ export async function updateProduct(
   if (image instanceof File && image.size > 0) {
     const up = await uploadImage(image, "photo", `products/${product._id.toHexString()}`);
     if (product.imageUrl) {
-      const k = keyFromPublicUrl(product.imageUrl);
-      if (k) deleteObject(k).catch(() => {});
+      deleteObject(product.imageUrl).catch(() => {});
     }
     imageUrl = up.url;
   }
@@ -120,8 +119,7 @@ export async function deleteProduct(productId: string): Promise<void> {
   if (!product) return;
   await col.deleteOne({ _id: product._id });
   if (product.imageUrl) {
-    const k = keyFromPublicUrl(product.imageUrl);
-    if (k) deleteObject(k).catch(() => {});
+    deleteObject(product.imageUrl).catch(() => {});
   }
   revalidatePath("/vendedor/produtos");
   revalidatePath(`/lojas/${store.slug}`);

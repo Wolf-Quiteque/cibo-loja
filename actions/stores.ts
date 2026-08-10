@@ -7,7 +7,7 @@ import { stores, ObjectId } from "@/lib/db";
 import { storeSchema } from "@/lib/validation";
 import { slugify } from "@/lib/slug";
 import { uploadImage } from "./uploads";
-import { deleteObject, keyFromPublicUrl } from "@/lib/r2";
+import { deleteObject } from "@/lib/blob";
 
 export type StoreActionState = { error?: string; ok?: boolean } | null;
 
@@ -53,16 +53,14 @@ export async function saveStore(
   if (logoFile instanceof File && logoFile.size > 0) {
     const up = await uploadImage(logoFile, "logo", `stores/${vendorId.toHexString()}/logo`);
     if (existing?.logoUrl) {
-      const k = keyFromPublicUrl(existing.logoUrl);
-      if (k) deleteObject(k).catch(() => {});
+      deleteObject(existing.logoUrl).catch(() => {});
     }
     logoUrl = up.url;
   }
   if (bannerFile instanceof File && bannerFile.size > 0) {
     const up = await uploadImage(bannerFile, "banner", `stores/${vendorId.toHexString()}/banner`);
     if (existing?.bannerUrl) {
-      const k = keyFromPublicUrl(existing.bannerUrl);
-      if (k) deleteObject(k).catch(() => {});
+      deleteObject(existing.bannerUrl).catch(() => {});
     }
     bannerUrl = up.url;
   }

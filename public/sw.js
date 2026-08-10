@@ -62,7 +62,7 @@ self.addEventListener("fetch", (event) => {
 });
 
 function isImageHost(url) {
-  return /\.r2\.dev$|\.r2\.cloudflarestorage\.com$/i.test(url.hostname);
+  return /\.r2\.dev$|\.r2\.cloudflarestorage\.com$|\.blob\.vercel-storage\.com$/i.test(url.hostname);
 }
 
 async function networkFirst(req, cacheName) {
