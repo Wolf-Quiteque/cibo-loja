@@ -49,8 +49,10 @@ export function InstallPrompt() {
     window.addEventListener("beforeinstallprompt", onPrompt);
 
     if (isIOSSafari(navigator.userAgent)) {
-      setMode("ios");
-      const t = setTimeout(() => setShowBanner(true), 1500);
+      const t = setTimeout(() => {
+        setMode("ios");
+        setShowBanner(true);
+      }, 1500);
       return () => {
         clearTimeout(t);
         window.removeEventListener("beforeinstallprompt", onPrompt);
@@ -100,14 +102,14 @@ export function InstallPrompt() {
             </div>
             <button
               onClick={actOnBanner}
-              className="rounded-full bg-brand px-3 py-2 text-xs font-semibold text-black"
+              className="rounded-full bg-brand px-3 py-2 text-xs font-semibold text-white"
             >
               {mode === "ios" ? "Ver como" : "Instalar"}
             </button>
             <button
               onClick={dismiss}
               aria-label="Fechar"
-              className="rounded-full p-1 text-text-muted hover:text-white"
+              className="rounded-full p-1 text-text-muted hover:text-text"
             >
               <X size={16} />
             </button>
@@ -139,7 +141,7 @@ function IOSInstallGuide({ onClose }: { onClose: () => void }) {
       >
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(70%_60%_at_50%_0%,rgba(0,230,168,0.22),transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(70%_60%_at_50%_0%,rgba(251,146,60,0.25),transparent_70%)]"
         />
 
         <button
@@ -189,7 +191,7 @@ function IOSInstallGuide({ onClose }: { onClose: () => void }) {
           </p>
           <button
             onClick={onClose}
-            className="mt-3 w-full rounded-full bg-brand py-3 text-sm font-bold text-black"
+            className="mt-3 w-full rounded-full bg-brand py-3 text-sm font-bold text-white"
           >
             Percebi
           </button>
@@ -214,7 +216,7 @@ function Step({
     <div className="group flex items-center gap-3 rounded-2xl border border-border bg-surface-2/60 p-3 transition hover:border-brand/40">
       <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand ring-1 ring-brand/25">
         {icon}
-        <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand text-[10px] font-black text-black ring-2 ring-surface">
+        <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-brand text-[10px] font-black text-white ring-2 ring-surface">
           {n}
         </span>
       </div>

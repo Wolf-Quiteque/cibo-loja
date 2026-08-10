@@ -60,7 +60,7 @@ export function CartView() {
                 <span className="min-w-6 text-center text-sm font-semibold">{it.qty}</span>
                 <button
                   onClick={() => changeQty(it.productId, +1)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-black"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white"
                   aria-label="Mais"
                 >
                   <Plus size={14} />

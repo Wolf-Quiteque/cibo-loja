@@ -156,7 +156,7 @@ function CropperModal(props: {
         <button
           type="button"
           onClick={props.onApply}
-          className="flex items-center gap-1 rounded-full bg-brand px-3 py-1.5 text-xs font-bold text-black"
+          className="flex items-center gap-1 rounded-full bg-brand px-3 py-1.5 text-xs font-bold text-white"
         >
           <Check size={14} /> Aplicar
         </button>

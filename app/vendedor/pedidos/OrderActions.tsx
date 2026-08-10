@@ -51,7 +51,7 @@ export function OrderActions({ orderId, status, paymentStatus, paymentMethod, ha
           disabled={pending}
           onClick={() => start(() => updateOrderStatus(orderId, advance.next))}
           className={cn(
-            "inline-flex items-center gap-1 rounded-full bg-brand px-3 py-1.5 text-xs font-bold text-black",
+            "inline-flex items-center gap-1 rounded-full bg-brand px-3 py-1.5 text-xs font-bold text-white",
             pending && "opacity-50",
           )}
         >

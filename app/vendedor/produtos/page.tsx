@@ -21,7 +21,7 @@ export default async function VendedorProdutosPage() {
           <p className="text-sm text-text-muted">Crie primeiro a sua loja.</p>
           <Link
             href="/vendedor/loja"
-            className="mt-4 inline-block rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-black"
+            className="mt-4 inline-block rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white"
           >
             Configurar loja
           </Link>
@@ -40,7 +40,7 @@ export default async function VendedorProdutosPage() {
         right={
           <Link
             href="/vendedor/produtos/novo"
-            className="flex h-10 items-center gap-1 rounded-full bg-brand px-3 text-xs font-bold text-black"
+            className="flex h-10 items-center gap-1 rounded-full bg-brand px-3 text-xs font-bold text-white"
           >
             <Plus size={16} /> Novo
           </Link>
@@ -55,7 +55,7 @@ export default async function VendedorProdutosPage() {
             <p className="text-sm text-text-muted">Ainda sem produtos.</p>
             <Link
               href="/vendedor/produtos/novo"
-              className="mt-4 inline-flex items-center gap-1 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-black"
+              className="mt-4 inline-flex items-center gap-1 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white"
             >
               <Plus size={16} /> Adicionar produto
             </Link>

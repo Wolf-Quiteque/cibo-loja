@@ -16,7 +16,7 @@ function SignOutButton() {
       <button
         type="submit"
         aria-label="Terminar sessão"
-        className="flex h-10 items-center gap-1.5 rounded-full px-3 text-xs font-semibold text-text-muted hover:bg-white/5 hover:text-text"
+        className="flex h-10 items-center gap-1.5 rounded-full px-3 text-xs font-semibold text-text-muted hover:bg-brand/10 hover:text-text"
       >
         <LogOut size={16} />
         <span>Sair</span>
@@ -48,7 +48,7 @@ export default async function VendedorHomePage() {
             </p>
             <Link
               href="/vendedor/loja"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-black"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white"
             >
               Configurar loja <ArrowRight size={16} />
             </Link>

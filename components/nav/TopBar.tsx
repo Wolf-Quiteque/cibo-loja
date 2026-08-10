@@ -24,7 +24,7 @@ export function TopBar({ title, back, right, transparent }: Props) {
           <Link
             href={typeof back === "string" ? back : "/"}
             aria-label="Voltar"
-            className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-white/5"
+          className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-brand/10"
           >
             <ChevronLeft size={22} />
           </Link>

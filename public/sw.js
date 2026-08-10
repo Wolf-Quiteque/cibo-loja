@@ -1,4 +1,4 @@
-const VERSION = "v2";
+const VERSION = "v3";
 const STATIC_CACHE = `static-${VERSION}`;
 const PAGE_CACHE = `pages-${VERSION}`;
 const IMAGE_CACHE = `images-${VERSION}`;

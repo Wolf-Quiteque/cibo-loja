@@ -54,7 +54,7 @@ export default async function BuscarPage({ searchParams }: Props) {
           {c && <input type="hidden" name="c" value={c} />}
         </form>
 
-        {c && <div className="mb-3 text-xs text-text-muted">Categoria: <span className="text-white">{c}</span></div>}
+        {c && <div className="mb-3 text-xs text-text-muted">Categoria: <span className="text-text">{c}</span></div>}
 
         {products.length > 0 && (
           <section className="mb-6">

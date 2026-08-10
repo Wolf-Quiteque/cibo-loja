@@ -30,7 +30,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             id={inputId}
             className={cn(
-              "flex-1 bg-transparent px-4 py-3 text-[15px] text-white placeholder:text-text-dim outline-none",
+              "flex-1 bg-transparent px-4 py-3 text-[15px] text-text placeholder:text-text-dim outline-none",
               className,
             )}
             {...rest}
@@ -68,7 +68,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={textareaId}
           rows={3}
           className={cn(
-            "rounded-2xl border bg-surface px-4 py-3 text-[15px] text-white outline-none transition-colors placeholder:text-text-dim",
+            "rounded-2xl border bg-surface px-4 py-3 text-[15px] text-text outline-none transition-colors placeholder:text-text-dim",
             error
               ? "border-danger/60"
               : "border-border focus:border-brand/60",

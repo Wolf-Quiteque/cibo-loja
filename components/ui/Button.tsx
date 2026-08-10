@@ -23,10 +23,10 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-brand text-black hover:brightness-110 shadow-[0_10px_30px_-10px_rgba(0,230,168,0.6)]",
+    "bg-brand text-white hover:brightness-110 shadow-[0_10px_30px_-10px_rgba(194,65,12,0.42)]",
   secondary:
-    "bg-surface-2 text-white border border-border hover:bg-surface",
-  ghost: "text-text-muted hover:text-white",
+    "bg-surface-2 text-text border border-border hover:bg-surface",
+  ghost: "text-text-muted hover:text-text",
   danger: "bg-danger text-white hover:brightness-110",
 };
 

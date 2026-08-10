@@ -64,7 +64,7 @@ export function ProductCard({ product, storeId, storeName, storeSlug, deliveryFe
               <button
                 type="button"
                 onClick={dec}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text"
                 aria-label="Remover"
               >
                 <Minus size={16} />
@@ -73,7 +73,7 @@ export function ProductCard({ product, storeId, storeName, storeSlug, deliveryFe
               <button
                 type="button"
                 onClick={inc}
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-black"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white"
                 aria-label="Adicionar"
               >
                 <Plus size={16} />
@@ -84,7 +84,7 @@ export function ProductCard({ product, storeId, storeName, storeSlug, deliveryFe
               type="button"
               onClick={add}
               disabled={!product.available}
-              className="flex h-9 w-full items-center justify-center gap-1 rounded-full bg-brand text-xs font-bold text-black disabled:opacity-40"
+              className="flex h-9 w-full items-center justify-center gap-1 rounded-full bg-brand text-xs font-bold text-white disabled:opacity-40"
             >
               <Plus size={14} /> Adicionar
             </button>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Peça comida das melhores lojas de Angola. Pagamento na entrega ou por transferência — rápido, simples e seguro.",
   applicationName: "Sequele Express",
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Sequele Express" },
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "Sequele Express" },
   formatDetection: { telephone: false },
   icons: {
     icon: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#07080b",
+  themeColor: "#fffaf6",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
@@ -38,7 +38,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-AO">
-      <body className="min-h-dvh antialiased selection:bg-brand/30 selection:text-white">
+      <body className="min-h-dvh antialiased selection:bg-brand selection:text-white">
         <CartProvider>{children}</CartProvider>
         <ServiceWorkerRegistrar />
         <InstallPrompt />

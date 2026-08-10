@@ -23,7 +23,7 @@ export function SignupForm() {
             onClick={() => setRole(r)}
             className={cn(
               "rounded-full py-2 text-sm font-semibold transition-colors",
-              role === r ? "bg-brand text-black" : "text-text-muted",
+              role === r ? "bg-brand text-white" : "text-text-muted",
             )}
           >
             {r === "cliente" ? "Sou Cliente" : "Tenho uma Loja"}

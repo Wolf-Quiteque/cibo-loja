@@ -60,7 +60,7 @@ export function BottomNav() {
                 href={it.href}
                 className={cn(
                   "relative flex flex-1 flex-col items-center gap-0.5 rounded-full py-1.5 text-[10px] transition-colors",
-                  active ? "text-white" : "text-text-muted",
+                  active ? "text-text" : "text-text-muted",
                 )}
               >
                 <span
@@ -73,7 +73,7 @@ export function BottomNav() {
                 >
                   <Icon size={20} />
                   {showBadge && (
-                    <span className="absolute top-1 right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand px-1 text-[10px] font-bold text-black">
+                    <span className="absolute top-1 right-3 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand px-1 text-[10px] font-bold text-white">
                       {count > 9 ? "9+" : count}
                     </span>
                   )}

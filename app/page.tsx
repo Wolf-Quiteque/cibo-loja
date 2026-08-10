@@ -21,7 +21,7 @@ export default async function HomePage() {
     <div className="flex min-h-dvh flex-col">
       <main className="flex-1 pb-24">
         <div className="relative">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(0,230,168,0.22),transparent_70%)]" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(251,146,60,0.25),transparent_70%)]" />
           <header className="relative z-10 flex items-center justify-between px-5 pt-[calc(env(safe-area-inset-top,0)+1rem)]">
             <div>
               <div className="text-xs text-text-muted">Olá{session ? "," : ""}</div>

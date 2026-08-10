@@ -19,7 +19,7 @@ export function Badge({
   ...rest
 }: React.HTMLAttributes<HTMLSpanElement> & { tone?: "neutral" | "brand" | "accent" | "danger" | "warning" }) {
   const tones = {
-    neutral: "bg-white/5 text-text-muted border border-border",
+    neutral: "bg-surface-2 text-text-muted border border-border",
     brand: "bg-brand/15 text-brand border border-brand/30",
     accent: "bg-accent/15 text-accent border border-accent/30",
     danger: "bg-danger/15 text-danger border border-danger/30",

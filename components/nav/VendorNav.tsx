@@ -27,7 +27,7 @@ export function VendorNav() {
                 href={t.href}
                 className={cn(
                   "flex flex-1 flex-col items-center gap-0.5 rounded-full py-1.5 text-[10px] transition-colors",
-                  active ? "text-white" : "text-text-muted",
+                  active ? "text-text" : "text-text-muted",
                 )}
               >
                 <span
